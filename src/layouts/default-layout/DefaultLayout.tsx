@@ -1,4 +1,4 @@
-import { NavigationBar } from "../../components";
+import { Footer, NavigationBar } from "../../components";
 import "./DefaultLayout.styles.scss";
 
 interface DefaultLayoutProps {
@@ -10,6 +10,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
         <main className="default-layout-wrapper">
             <NavigationBar />
             {children}
+            <Footer />
         </main>
     );
 };

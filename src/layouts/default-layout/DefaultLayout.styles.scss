@@ -1,3 +1,6 @@
 .default-layout-wrapper {
     width: 70vw;
+    display: flex;
+    flex-direction: column;
+    gap: 300px;
 }
