@@ -18,3 +18,4 @@ Install Portfolio-Reactjs with npm
 -   react-icons
 -   react-router-dom
 -   tech-stack-icons
+-   Sass
