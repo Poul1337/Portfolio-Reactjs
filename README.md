@@ -4,7 +4,7 @@ Paweł Jaruszewski portfolio
 
 ## Installation
 
-Install my-project with npm
+Install Portfolio-Reactjs with npm
 
 ```bash
   npm install
