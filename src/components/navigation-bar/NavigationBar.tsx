@@ -4,11 +4,26 @@ import NavigationBarIcons from "./NavigationBarIcons";
 
 const NavigationBar = () => {
     const navigationItems = [
-        "Strona główna",
-        "O mnie",
-        "Tech Stack",
-        "Kontakt",
+        { name: "Strona główna", href: "" },
+        { name: "O mnie", href: "about" },
+        { name: "Tech Stack", href: "tech-stack" },
+        { name: "Kontakt", href: "" },
     ];
+
+    const handleGoToSection = (href: string) => {
+        const element = document.getElementById(href);
+        if (element) {
+            const offset = -300;
+            const elementPosition =
+                element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition + offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+            });
+        }
+    };
 
     return (
         <nav className="navigation-bar-wrapper">
@@ -16,8 +31,12 @@ const NavigationBar = () => {
             <div className="navigation-bar-buttons-wrapper">
                 <ul className="navigation-bar-ul">
                     {navigationItems.map((item, index) => (
-                        <li className="navigation-bar-li" key={index}>
-                            {item}
+                        <li
+                            className="navigation-bar-li"
+                            key={index}
+                            onClick={() => handleGoToSection(item.href)}
+                        >
+                            {item.name}
                         </li>
                     ))}
                 </ul>

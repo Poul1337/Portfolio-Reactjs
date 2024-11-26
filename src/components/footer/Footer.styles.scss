@@ -1,9 +1,12 @@
 $main-color: #666666;
 $linear-from: #13b0f5;
 $linear-to: #e70faa;
+$first-breakpoint: 1200px;
+$second-breakpoint: 992px;
+$third-breakpoint: 768px;
+$fourth-breakpoint: 600px;
 
 footer {
-    //margin-top: 150px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -21,7 +24,7 @@ footer {
     align-items: center;
 }
 
-.footer-up > div > h1 {
+.footer-info h1 {
     font-size: 18px;
     font-weight: 300;
 }
@@ -88,4 +91,48 @@ footer {
     background: linear-gradient(to right, $linear-from, $linear-to);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: $fourth-breakpoint) {
+    .footer-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .footer-info h1 {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: $third-breakpoint) {
+    .footer-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        width: 100%;
+    }
+}
+
+@media (max-width: $second-breakpoint) {
+    .footer-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        width: 100%;
+    }
+}
+
+@media (max-width: $first-breakpoint) {
+    .footer-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        width: 100%;
+    }
 }

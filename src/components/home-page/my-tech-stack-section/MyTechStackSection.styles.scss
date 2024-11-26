@@ -1,25 +1,27 @@
 $h1-font-color: #42446e;
 $h2-font-color: #666666;
+$first-breakpoint: 1200px;
+$second-breakpoint: 992px;
+$third-breakpoint: 768px;
+$fourth-breakpoint: 600px;
 
 .my-tech-stack-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    //margin-top: 300px;
+    gap: 10vh;
 }
 
 .my-tech-stack-description > h1 {
     color: $h1-font-color;
     margin: 0;
-    font-size: 48px;
+    font-size: 2.5vw;
     font-weight: 900;
 }
 
 .my-tech-stack-description > h2 {
     color: $h2-font-color;
     margin: 0;
-    font-size: 32px;
+    font-size: 1.5vw;
     font-weight: 400;
 }
 
@@ -27,26 +29,109 @@ $h2-font-color: #666666;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 100px;
 }
 
 .my-tech-stack-icons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
-    flex-grow: 1;
+    gap: 20px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.stack-icon {
+    animation: pulse 3s infinite ease-in-out;
+
+    &:first-child {
+        margin-left: 0;
+        gap: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+@keyframes pulseQuery {
+    0% {
+        transform: scale(0.6);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.6);
+        opacity: 1;
+    }
+}
+
+@media (max-width: $first-breakpoint) {
+    .my-tech-stack-description > h1 {
+        font-size: 4vw;
+    }
+
+    .my-tech-stack-description > h2 {
+        font-size: 3vw;
+    }
 
     .stack-icon {
-        width: 70px;
+        animation: pulseQuery 3s infinite ease-in-out;
+    }
+}
 
-        &:first-child {
-            margin-left: 0;
-            gap: 0;
-        }
+@media (max-width: $second-breakpoint) {
+    .my-tech-stack-description > h1 {
+        font-size: 12;
+    }
 
-        &:last-child {
-            margin-right: 0;
-        }
+    .my-tech-stack-description > h2 {
+        font-size: 2.5vw;
+    }
+    .stack-icon {
+        animation: pulseQuery 3s infinite ease-in-out;
+    }
+}
+
+@media (max-width: $third-breakpoint) {
+    .my-tech-stack-description > h1 {
+        font-size: 4.5vw;
+    }
+
+    .my-tech-stack-description > h2 {
+        font-size: 3.5vw;
+    }
+
+    .stack-icon {
+        animation: pulseQuery 3s infinite ease-in-out;
+    }
+}
+
+@media (max-width: $fourth-breakpoint) {
+    .my-tech-stack-description > h1 {
+        font-size: 6vw;
+    }
+
+    .my-tech-stack-description > h2 {
+        font-size: 4vw;
+    }
+
+    .stack-icon {
+        animation: pulseQuery 3s infinite ease-in-out;
     }
 }

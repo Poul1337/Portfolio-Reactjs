@@ -2,6 +2,10 @@ $base-font-color: #666666;
 $navigation-bar-bg-color: white;
 $linear-from: #13b0f5;
 $linear-to: #e70faa;
+$first-breakpoint: 1200px;
+$second-breakpoint: 992px;
+$third-breakpoint: 768px;
+$fourth-breakpoint: 600px;
 
 .navigation-bar-ul {
     display: flex;
@@ -23,8 +27,8 @@ $linear-to: #e70faa;
 .navigation-bar-li {
     padding: 10px;
     font-size: 20px;
-    color: $base-font-color;
     position: relative;
+    color: $base-font-color;
 }
 
 .navigation-bar-li:hover {
@@ -54,11 +58,99 @@ $linear-to: #e70faa;
 .navigation-bar-buttons-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 50%;
+    gap: 3vw;
 }
 
 .navigation-bar-icon-link:hover {
     transform: scale(1.2);
     transition: transform 0.5s ease;
+}
+
+.burger-menu {
+    position: absolute;
+    right: 0;
+    background-color: $navigation-bar-bg-color;
+    top: 70px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 2vw;
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.burger-menu li {
+    color: $base-font-color;
+    background-image: linear-gradient(to right, $linear-from, $linear-to);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 2px;
+    padding-bottom: 2px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: itemSlideIn 0.5s forwards;
+    animation-delay: 0.2s;
+    cursor: pointer;
+}
+
+@keyframes itemSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.burger-menu li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.burger-menu li:nth-child(2) {
+    animation-delay: 0.2;
+}
+
+.burger-menu li:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.burger-menu li:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@media (max-width: $fourth-breakpoint) {
+    .logo {
+        transform: scale(0.5);
+    }
+
+    .burger-menu {
+        width: 100%;
+        background-color: $navigation-bar-bg-color;
+        margin: 0;
+        padding: 0;
+        right: 0;
+        left: 0;
+        padding: 20px 0 20px 0;
+    }
+
+    .burger-menu li {
+        font-size: 4vw;
+    }
 }

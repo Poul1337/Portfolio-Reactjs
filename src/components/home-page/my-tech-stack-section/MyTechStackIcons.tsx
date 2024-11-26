@@ -27,9 +27,18 @@ const MyTechStackIcons = () => {
     ];
     return (
         <div className="my-tech-stack-icons">
-            {techStack.map((item, index) => (
-                <StackIcon key={index} name={item} className="stack-icon" />
-            ))}
+            {techStack.map((item, index) => {
+                const delay = Math.random() * 3;
+
+                return (
+                    <StackIcon
+                        key={index}
+                        name={item}
+                        className="stack-icon"
+                        style={{ animationDelay: `${delay}s` }}
+                    />
+                );
+            })}
         </div>
     );
 };

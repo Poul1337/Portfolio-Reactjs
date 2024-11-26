@@ -2,7 +2,7 @@ import "./AboutSection.styles.scss";
 
 const AboutSection = () => {
     return (
-        <section className="about-section-wrapper">
+        <section className="about-section-wrapper" id="about">
             <h1 className="about-section-description">
                 Cześć
                 <span className="about-section-waving-hand">👋</span>, <br />{" "}

@@ -3,7 +3,7 @@ import "./MyTechStackSection.styles.scss";
 
 const MyTechStackSection = () => {
     return (
-        <section className="my-tech-stack-wrapper">
+        <section className="my-tech-stack-wrapper" id="tech-stack">
             <div className="my-tech-stack-description">
                 <h1>Mój Tech Stack</h1>
                 <h2>Technologie w których pracowałem</h2>

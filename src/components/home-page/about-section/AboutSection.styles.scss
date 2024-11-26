@@ -1,6 +1,10 @@
 $font-color: #42446e;
 $linear-from: #13b0f5;
 $linear-to: #e70faa;
+$first-breakpoint: 1200px;
+$second-breakpoint: 992px;
+$third-breakpoint: 768px;
+$fourth-breakpoint: 600px;
 
 .about-section-waving-hand {
     animation-name: wave-animation;
@@ -43,7 +47,6 @@ $linear-to: #e70faa;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    //margin-top: 200px;
 }
 
 .about-section-name {
@@ -55,14 +58,14 @@ $linear-to: #e70faa;
 
 .about-section-description {
     color: $font-color;
-    font-size: 58px;
+    font-size: 3.5vw;
     width: 50%;
 }
 
 .about-section-profile-photo-wrapper {
     display: inline-block;
-    width: 350px;
-    height: 350px;
+    width: 23vw;
+    height: 23vw;
     border-radius: 50%;
     padding: 8px;
     background: linear-gradient(to right, $linear-from, $linear-to);
@@ -77,4 +80,30 @@ $linear-to: #e70faa;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+}
+
+@media (max-width: $first-breakpoint) {
+    .about-section-description {
+        font-size: 4.5vw;
+    }
+
+    .about-section-profile-photo-wrapper {
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+@media (max-width: $fourth-breakpoint) {
+    .about-section-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .about-section-description {
+        font-size: 7vw;
+    }
+
+    .about-section-profile-photo-wrapper {
+        width: 60vw;
+        height: 60vw;
+    }
 }

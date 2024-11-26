@@ -1,6 +1,9 @@
+import "../components/navigation-bar/NavigationBar.styles.scss";
+
 const Logo = () => {
     return (
         <svg
+            className="logo"
             width="65"
             height="65"
             viewBox="0 0 135 131"
